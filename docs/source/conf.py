@@ -19,16 +19,13 @@
 #
 import os
 import sys
+import shlex
+
 
 # For conversion from markdown to html
 import recommonmark.parser
 
 # set paths
-from os.path import dirname
-docs = dirname(dirname(__file__))
-root = dirname(docs)
-sys.path.insert(0, root)
-sys.path.insert(0, os.path.join(docs, 'sphinxext'))
 
 # -- General configuration ------------------------------------------------
 
@@ -69,6 +66,12 @@ project = 'kubespawner'
 copyright = '2017, Project Jupyter'
 author = 'Project Jupyter'
 
+# Autopopulate version
+from os.path import dirname
+docs = dirname(dirname(__file__))
+root = dirname(docs)
+sys.path.insert(0, root)
+sys.path.insert(0, os.path.join(docs, 'sphinxext')
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -178,3 +181,13 @@ texinfo_documents = [
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+# -- Read The Docs --------------------------------------------------------
+
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
+if not on_rtd:
+    # only import and set the theme if we're building docs locally
+    import sphinx_rtd_theme
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]

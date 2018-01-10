@@ -13,8 +13,7 @@ class ConfigurableDocumenter(ClassDocumenter):
     def get_object_members(self, want_all):
         """Add traits with .tag(config=True) to members list"""
         check, members = super().get_object_members(want_all)
-        get_traits = self.object.class_own_traits if self.options.inherited_members \
-                     else self.object.class_traits
+        get_traits = self.object.class_own_traits if self.options.inherited_members else self.object.class_traits
         trait_members = []
         for name, trait in sorted(get_traits(config=True).items()):
             # put help in __doc__ where autodoc will look for it

@@ -4,12 +4,14 @@
 
 
 Module: :mod:`kubespawner.spawner`
-----------------------------------
+==================================
+
+.. automodule:: kubespawner.spawner
 
 .. currentmodule:: kubespawner.spawner
 
-:class:`KubeSpawner`
---------------------
+
+.. autoclass:: PodReflector
 
 .. autoconfigurable:: KubeSpawner
     :members:

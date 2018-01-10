@@ -1,0 +1,5 @@
+jupyterhub>=0.8
+pyYAML
+kubernetes==3.*
+escapism
+traitlets>=4.3

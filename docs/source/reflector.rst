@@ -3,13 +3,12 @@ Reflector
 =========
 
 Module: :mod:`kubespawner.reflector`
-------------------------------------
+====================================
 
 .. automodule:: kubespawner.reflector
 
+.. currentmodule:: kubespawner.reflector
 
-:class:`PodReflector`
----------------------
 
-.. autoconfigurable:: PodReflector
+.. autoconfigurable:: NamespacedResourceReflector
     :members:
